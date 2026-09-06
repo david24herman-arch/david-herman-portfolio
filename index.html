@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>David Herman | Communication Portfolio</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f2eb;
+    color: #242424;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,242,235,0.96);
+    border-bottom: 1px solid #d8d1c5;
+    backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 25px 80px;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.small-label {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: #6d6a64;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 0.95;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 20px;
+    color: #55514b;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 1px solid #252525;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background: #252525;
+    color: white;
+}
+
+.button.dark {
+    background: #252525;
+    color: white;
+}
+
+.button.dark:hover {
+    background: transparent;
+    color: #252525;
+}
+
+/* ENGINEERING GRAPHIC */
+
+.blueprint {
+    border: 1px solid #aaa39a;
+    padding: 30px;
+    min-height: 330px;
+    position: relative;
+    background:
+        linear-gradient(rgba(80,80,80,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80,80,80,.06) 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.blueprint::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border: 1px solid #777;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.blueprint::after {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 1px;
+    background: #777;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circuit {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #777;
+    right: 30px;
+    bottom: 30px;
+}
+
+.circuit:before,
+.circuit:after {
+    content: "";
+    position: absolute;
+    background: #777;
+}
+
+.circuit:before {
+    width: 80px;
+    height: 1px;
+    top: 25px;
+    right: 48px;
+}
+
+.circuit:after {
+    width: 1px;
+    height: 80px;
+    left: 25px;
+    bottom: 48px;
+}
+
+/* GENERAL */
+
+section {
+    padding: 100px 25px;
+}
+
+.section-inner {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.section-title {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.section-intro {
+    max-width: 700px;
+    color: #66615a;
+    margin-bottom: 55px;
+    font-size: 18px;
+}
+
+/* ABOUT */
+
+.about {
+    background: #e9e4da;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.about p {
+    margin-bottom: 18px;
+}
+
+/* SHOWCASES */
+
+.showcases {
+    background: #f5f2eb;
+}
+
+.showcase {
+    border-top: 1px solid #bbb4aa;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 100px 1fr 250px;
+    gap: 40px;
+}
+
+.showcase-number {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    color: #888177;
+}
+
+.showcase h3 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 8px;
+}
+
+.showcase .subtitle {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+    color: #777169;
+    margin-bottom: 25px;
+}
+
+.showcase p {
+    margin-bottom: 16px;
+}
+
+.showcase-note {
+    border-left: 2px solid #555;
+    padding-left: 20px;
+    color: #65615b;
+    font-size: 14px;
+}
+
+/* VISUAL CARDS */
+
+.visual {
+    margin-top: 30px;
+    padding: 25px;
+    border: 1px solid #c7c0b6;
+    background: #eee9df;
+}
+
+.visual-title {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.process {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.process span {
+    padding: 8px 13px;
+    border: 1px solid #aaa39a;
+    font-size: 13px;
+}
+
+.arrow {
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* REFLECTION */
+
+.reflection {
+    background: #e9e4da;
+}
+
+.reflection-block {
+    max-width: 850px;
+    margin-bottom: 80px;
+}
+
+.reflection-block h3 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.reflection-block p {
+    margin-bottom: 20px;
+}
+
+/* SKILLS */
+
+.skills {
+    background: #292929;
+    color: #f5f2eb;
+}
+
+.skills .section-intro {
+    color: #c7c2b9;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #666;
+}
+
+.skill {
+    background: #292929;
+    padding: 30px 20px;
+    min-height: 140px;
+}
+
+.skill h4 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* LINKEDIN */
+
+.linkedin {
+    background: #f5f2eb;
+    text-align: center;
+}
+
+.linkedin-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 60px 30px;
+    border: 1px solid #bcb5ab;
+}
+
+.linkedin-box h2 {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.linkedin-box p {
+    color: #5f5a53;
+    margin-bottom: 30px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 25px;
+    background: #292929;
+    color: #d5d0c8;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .nav-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .showcase {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .showcase-number {
+        font-size: 30px;
+    }
+
+    .skill-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="logo">DAVID HERMAN</div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#work">Work</a>
+            <a href="#reflection">Reflection</a>
+            <a href="#linkedin">LinkedIn</a>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div>
+        <div class="small-label">ENG 2003 · Communication Portfolio</div>
+
+        <h1>
+            Communication<br>
+            <span>in progress.</span>
+        </h1>
+
+        <p>
+            A collection of work showing how my approach to engineering
+            communication developed throughout the year — from explaining
+            basic ideas to researching and communicating a technical topic.
+        </p>
+
+        <div class="hero-buttons">
+            <a class="button dark" href="#work">Explore my work</a>
+
+            <a class="button"
+               href="https://www.linkedin.com/in/david-herman-09a167427/"
+               target="_blank">
+                View LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <div class="blueprint">
+        <div class="circuit"></div>
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="section-inner">
+
+    <div class="small-label">01 · About</div>
+
+    <h2 class="section-title">Learning to communicate like an engineer.</h2>
+
+    <div class="about-grid">
+
+        <div>
+            <p>
+                Before taking ENG 2003, I expected the course to be mostly
+                about grammar, report formatting, and presentations. Those
+                things were part of it, but the course ended up being more
+                about understanding why a message works for one audience
+                and not another.
+            </p>
+
+            <p>
+                That changed how I think about engineering communication.
+                Being technically correct is important, but it is also
+                important to think about what the reader needs, what they
+                already know, and what they are supposed to do with the
+                information.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                The pieces in this portfolio are arranged from my earliest
+                and weakest work to the work I consider my strongest.
+            </p>
+
+            <p>
+                Looking at them together makes the development easier to
+                see. I started by explaining ideas mostly in the order I
+                found them. Later, I became more aware of audience, source
+                quality, structure, visuals, and revision.
+            </p>
+
+            <p>
+                The goal of this portfolio is not to make every piece look
+                perfect. I wanted the collection to show the process of
+                getting better.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section class="showcases" id="work">
+
+<div class="section-inner">
+
+    <div class="small-label">02 · Selected Work</div>
+
+    <h2 class="section-title">Four pieces. One progression.</h2>
+
+    <p class="section-intro">
+        These pieces are arranged chronologically from the work I consider
+        my weakest to the work I consider my strongest.
+    </p>
+
+
+    <!-- SHOWCASE 1 -->
+
+    <article class="showcase">
+
+        <div class="showcase-number">01</div>
+
+        <div>
+
+            <h3>Economics Reflection</h3>
+
+            <div class="subtitle">
+                ENG 2001 · Starting point
+            </div>
+
+            <p>
+                I put this reflection first because it shows where my
+                writing was near the beginning of the year. It was a short
+                assignment about what stood out to me in an economics
+                lecture, and I focused on monopsony because it was a
+                concept I had not thought about before.
+            </p>
+
+            <p>
+                I tried to explain it through cause and effect instead of
+                just repeating the definition from class. The language is
+                straightforward, and the example of one powerful buyer
+                controlling a market made the idea easier to understand.
+            </p>
+
+            <p>
+                At the same time, the reflection stays fairly close to the
+                lecture and does not go very far into my own experience or
+                connect the idea back to engineering. Looking at it now,
+                I can see that I was explaining what I learned, but I was
+                not really shaping the piece for a reader yet.
+            </p>
+
+            <p>
+                This is probably the weakest piece in the portfolio, but
+                that is also why I wanted to include it. It gives the rest
+                of the work a starting point.
+            </p>
+
+        </div>
+
+        <div class="showcase-note">
+            <strong>What changed</strong><br><br>
+            I was mainly focused on explaining the idea itself. I had not
+            yet started thinking as carefully about audience and purpose.
+        </div>
+
+    </article>
+
+
+    <!-- SHOWCASE 2 -->
+
+    <article class="showcase">
+
+        <div class="showcase-number">02</div>
+
+        <div>
+
+            <h3>Professional Cover Letter</h3>
+
+            <div class="subtitle">
+                ENG 2003 · Learning to write for an audience
+            </div>
+
+            <p>
+                The cover letter changed the way I thought about audience.
+                I could not just describe myself in general. I had to look
+                at what the employer wanted and decide which parts of my
+                experience actually belonged in the letter.
+            </p>
+
+            <p>
+                I used my work on an Arduino-based automated seat, my role
+                in testing and debugging it, and my interest in restoring
+                vintage hand planes because those examples showed patience
+                and practical problem-solving.
+            </p>
+
+            <p>
+                This assignment was more uncomfortable than the economics
+                reflection. I find it easier to explain how a system works
+                than to explain why someone should hire me. I did not want
+                to sound like I was exaggerating, but being too careful can
+                also make a cover letter sound unsure.
+            </p>
+
+            <p>
+                Working through that balance helped me become more direct
+                about what I contributed to a project.
+            </p>
+
+        </div>
+
+        <div class="showcase-note">
+            <strong>What changed</strong><br><br>
+            I started choosing information based on the person reading it,
+            rather than only based on what I wanted to say.
+        </div>
+
+    </article>
+
+
+    <!-- SHOWCASE 3 -->
+
+    <article class="showcase">
+
+        <div class="showcase-number">03</div>
+
+        <div>
+
+            <h3>Annotated Bibliography</h3>
+
+            <div class="subtitle">
+                ENG 2003 · Becoming a more careful researcher
+            </div>
+
+            <p>
+                By the time I reached the annotated bibliography, the work
+                became more technical. I chose small modular reactors
+                because the topic connects energy demand, electrical grids,
+                thermodynamics, and the move toward lower-carbon power.
+            </p>
+
+            <p>
+                At first, I mostly thought the job was to find five
+                credible sources. The assignment made me realize that
+                finding a source is only the beginning.
+            </p>
+
+            <p>
+                For every source, I had to separate what it said from how
+                useful it actually was. A BBC article gave me an accessible
+                overview, but it could not carry the technical part of the
+                report. Government material helped with Canadian regulation
+                and waste management, while journal articles were more
+                useful for thermodynamic efficiency and microgrid
+                integration.
+            </p>
+
+            <p>
+                The bibliography pushed me outside my comfort zone because
+                I could not hide behind a summary. I had to make a judgement
+                and support it.
+            </p>
+
+            <div class="visual">
+
+                <div class="visual-title">
+                    Research process
+                </div>
+
+                <div class="process">
+                    <span>Find</span>
+                    <span class="arrow">→</span>
+                    <span>Evaluate</span>
+                    <span class="arrow">→</span>
+                    <span>Compare</span>
+                    <span class="arrow">→</span>
+                    <span>Use</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="showcase-note">
+            <strong>What changed</strong><br><br>
+            I learned that a credible source is not automatically the
+            right source. I had to explain what each source could and
+            could not contribute.
+        </div>
+
+    </article>
+
+
+    <!-- SHOWCASE 4 -->
+
+    <article class="showcase">
+
+        <div class="showcase-number">04</div>
+
+        <div>
+
+            <h3>Technical Report</h3>
+
+            <div class="subtitle">
+                ENG 2003 · My strongest work
+            </div>
+
+            <p>
+                The technical report is the last piece because it is where
+                the earlier work comes together. I began with a topic I was
+                genuinely interested in, but interest alone was not enough
+                to make the report clear.
+            </p>
+
+            <p>
+                I had to move from the basic operation of a Small Modular
+                Reactor into its advantages, limitations, and possible role
+                beside renewable energy. That meant deciding what
+                background the reader needed and what could be left out.
+            </p>
+
+            <p>
+                The first draft had a good overall structure, but peer
+                feedback showed where it was still thin. I added a diagram
+                explaining how an SMR generates electricity, comparison
+                tables, and a Canadian example based on the Darlington
+                project.
+            </p>
+
+            <p>
+                I also made the discussion of cost and uncertainty more
+                careful. Those changes taught me that revision does not
+                always mean starting over. Sometimes the better decision
+                is to keep the parts that work and add detail exactly where
+                the reader needs it.
+            </p>
+
+            <p>
+                This assignment pushed me the furthest outside my comfort
+                zone because of its length and because I had to explain
+                nuclear technology without assuming the reader already
+                understood it.
+            </p>
+
+            <p>
+                It is my strongest piece, although I would not call it
+                perfect. What makes it my best work is that it is organized,
+                supported by research, and balanced. I did not present SMRs
+                as the only answer. I argued that they may be one useful
+                part of a larger energy system, which is closer to how real
+                engineering decisions are made.
+            </p>
+
+            <div class="visual">
+
+                <div class="visual-title">
+                    From research to technical argument
+                </div>
+
+                <div class="process">
+                    <span>Energy demand</span>
+                    <span class="arrow">→</span>
+                    <span>SMR technology</span>
+                    <span class="arrow">→</span>
+                    <span>Grid integration</span>
+                    <span class="arrow">→</span>
+                    <span>Balanced conclusion</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="showcase-note">
+            <strong>What changed</strong><br><br>
+            This is where audience analysis, research, organization,
+            visuals, peer feedback, and revision came together.
+        </div>
+
+    </article>
+
+</div>
+
+</section>
+
+
+<!-- REFLECTION -->
+
+<section class="reflection" id="reflection">
+
+<div class="section-inner">
+
+    <div class="small-label">03 · Reflection</div>
+
+    <h2 class="section-title">What I learned.</h2>
+
+    <p class="section-intro">
+        The biggest change was realizing that engineering communication
+        is not just about getting the technical information right.
+    </p>
+
+
+    <div class="reflection-block">
+
+        <h3>Part A — Overall Course Reflection</h3>
+
+        <p>
+            Before taking ENG 2003, I expected a course mostly about
+            grammar, report formatting, and maybe presentations. Those
+            things were part of it, but the course was more about
+            understanding why a message works for one audience and not
+            another.
+        </p>
+
+        <p>
+            That was useful because engineering communication is not only
+            about whether the information is technically correct. It also
+            matters what the reader needs, what they already know, and
+            what they are expected to do with the information.
+        </p>
+
+        <p>
+            Three assignments made that clear to me. The cover letter
+            forced me to choose which experiences mattered to a particular
+            employer instead of writing a general description of myself.
+            The annotated bibliography made me separate summarizing a
+            source from evaluating it.
+        </p>
+
+        <p>
+            Finally, the technical report made me organize a large amount
+            of information so a reader could move from the basic operation
+            of an SMR to its benefits, limitations, and possible role in
+            the electrical grid.
+        </p>
+
+        <p>
+            The peer-review stage was probably the most useful part because
+            another reader noticed where I needed a diagram, stronger
+            evidence, or more context even when the meaning seemed obvious
+            to me.
+        </p>
+
+        <p>
+            The communication axioms helped me understand this. A message
+            has both a content and a relationship side, so credibility and
+            tone affect how the technical content is received. Communication
+            is also unavoidable: formatting, missing information, and even
+            a crowded page communicate something.
+        </p>
+
+        <p>
+            I found audience analysis and visual communication the most
+            interesting because they changed the way I looked at documents
+            I had previously thought of as mainly written text.
+        </p>
+
+        <p>
+            I tried to apply the 7 C's by making the report clear, concrete,
+            correct, coherent, complete, concise, and courteous. The
+            difficult part was balance. Being concise did not mean removing
+            the limitations of SMRs, because that would make the argument
+            incomplete and less credible.
+        </p>
+
+        <p>
+            Overall, the course was more practical than I expected and
+            gave me a process I can reuse instead of only a list of
+            formatting rules.
+        </p>
+
+    </div>
+
+
+    <div class="reflection-block">
+
+        <h3>Part B — Personal Growth & Development</h3>
+
+        <p>
+            At the start of the course, I could usually explain what I
+            meant, but I did not always think far enough ahead about
+            structure or audience. My first instinct was to include
+            information in the order I found it.
+        </p>
+
+        <p>
+            I also tended to assume that if a sentence made sense to me,
+            it would make sense to the reader. ENG 2003 helped me slow down
+            and plan the message before writing it.
+        </p>
+
+        <p>
+            The skill I improved most was technical report writing. In the
+            SMR project, I went from a broad topic statement and five
+            source notes to a report with an executive summary, background,
+            technical explanation, comparison tables, a Canadian example,
+            discussion, and conclusion.
+        </p>
+
+        <p>
+            Revising from peer feedback was another major improvement.
+            Instead of treating feedback as a sign that the whole draft
+            was wrong, I learned to keep what was working and make targeted
+            changes.
+        </p>
+
+        <p>
+            My cover letter also improved my professional tone, while the
+            economics reflection helped me explain an idea in a more
+            personal and direct way.
+        </p>
+
+        <p>
+            I still need to work on proofreading and sentence control.
+            Some earlier work contains fragments, repeated wording, or
+            small formatting mistakes. I want to become better at catching
+            those issues before submitting my work.
+        </p>
+
+        <p>
+            Going forward, I think the biggest thing I will take from
+            ENG 2003 is the habit of thinking about the reader before I
+            start writing. Whether I am writing a lab report, explaining
+            an engineering design, documenting code, or eventually writing
+            for an employer, I need to think about what the reader actually
+            needs from me.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills">
+
+<div class="section-inner">
+
+    <div class="small-label">04 · Skills</div>
+
+    <h2 class="section-title">What I am taking forward.</h2>
+
+    <p class="section-intro">
+        These are skills I developed through the assignments and feedback
+        throughout the course.
+    </p>
+
+    <div class="skill-grid">
+
+        <div class="skill">
+            <h4>Audience</h4>
+            <p>
+                Thinking about who will read something before deciding
+                what information to include.
+            </p>
+        </div>
+
+        <div class="skill">
+            <h4>Research</h4>
+            <p>
+                Evaluating sources instead of assuming that every credible
+                source is equally useful.
+            </p>
+        </div>
+
+        <div class="skill">
+            <h4>Technical Writing</h4>
+            <p>
+                Organizing technical information so that a reader can
+                follow the argument.
+            </p>
+        </div>
+
+        <div class="skill">
+            <h4>Revision</h4>
+            <p>
+                Using feedback to make targeted improvements rather than
+                simply rewriting everything.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- LINKEDIN -->
+
+<section class="linkedin" id="linkedin">
+
+<div class="linkedin-box">
+
+    <div class="small-label">05 · Professional Profile</div>
+
+    <h2>Let's connect.</h2>
+
+    <p>
+        My LinkedIn profile includes my education, engineering experience,
+        projects, and professional interests.
+    </p>
+
+    <a class="button dark"
+       href="https://www.linkedin.com/in/david-herman-09a167427/"
+       target="_blank">
+        View my LinkedIn profile
+    </a>
+
+</div>
+
+</section>
+
+
+<footer>
+    <p>David Herman · Electrical Engineering · York University</p>
+    <p>ENG 2003 · Effective Engineering Communication · 2026</p>
+</footer>
+
+</body>
+</html>
